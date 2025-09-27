@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7); /* Soft gradient background */
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white; /* Simple soft color */
+      color: #333;
+      padding: 30px 20px;
+      border-radius: 15px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 350px;
+      transform: scale(0); /* Start hidden */
+      opacity: 0;
+      animation: pop 0.5s forwards;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #4a148c; /* Accent color for headings */
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* Pop animation */
+    @keyframes pop {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Staggered delays */
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.8s; }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Introduction Column -->
+    <div class="card">
+      <h2>Introduction to Shield 360</h2>
+      <p>
+        Shield 360 is a child safety and awareness platform created to protect children in both the digital and physical world.  
+        It aims to educate children, parents, and educators about the risks associated with online activities, cyberbullying, inappropriate content, and real-world dangers.
+      </p>
+    </div>
+
+    <!-- Mission Column -->
+    <div class="card">
+      <h2>Our Mission</h2>
+      <p>
+        To empower children, parents, and educators with knowledge, resources, and tools  
+        to stay safe in the digital and physical world.  
+        We strive to build a community where every child can learn and grow without fear or risk.
+      </p>
+    </div>
+
+    <!-- Purpose Column -->
+    <div class="card">
+      <h2>Our Purpose</h2>
+      <p>
+        The purpose of Shield 360 is to create awareness about child protection laws,  
+        online safety measures, and to provide guidance on how to respond to threats  
+        effectively, ensuring a secure environment for all children.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

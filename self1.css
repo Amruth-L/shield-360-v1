@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+}
+
+*{
+    text-decoration: none;
+}
+
+*{
+    background-color: white;
+}
+
+.top{
+    background:  no-repeat;
+    background-size: 50px;
+    height: 50px;
+    width: 50px;
+    padding-right: 1300px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    color:black;
+    text-shadow: 1px-1px;
+    transition:1s;
+    padding-bottom: 100px;
+    align-items: center;
+    
+}
+
+.top:hover{
+    transform:translate(10px);
+    color:black;
+}
+
+
+.nav{
+
+    justify-content: space-between;
+    align-items: center;
+    width:50px;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+
+.page{
+    display: flex;
+    height:100px;
+    width:1500px;
+    justify-content: end;
+    align-items: center;
+    padding-top: 50px;
+    border: 2px solid black;
+    padding-right: 50px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     background-color:bisque;
+     text-shadow: 1px-1px;
+     transition: 1s;
+}
+
+
+.image1 {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    margin-left: 30%;
+
+}
+
+.intro{
+    font-size:x-large;
+}
+
+.key{
+     color: red;
+}
+
+.Bear{
+    font-size: x-large;
+
+}
+
+.hug{
+    font-size: x-large;
+}
+
+.groin{
+    font-size: x-large;
+}
+.image2{
+    display: flex;
+    height: 500px;
+    width:525px;
+    margin-left: 500px;
+    object-fit: cover;
+}
+
+.image3{
+    display: flex;
+    border: 2px white;
+    align-items: center;
+    margin-left: 30%;
+    
+}
+
+.close{
+    font-size: x-large;
+}
+
+.image4{
+    display: flex;
+    margin-left: 30%;
+}
+
+.punch{
+    font-size: x-large;
+}

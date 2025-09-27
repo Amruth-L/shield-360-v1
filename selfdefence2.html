@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KidSafe: Learn Self-Defense</title>
+  <style>
+    /* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #e0c3fc, #8ec5fc);
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.4s ease-in-out;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(to right,RGB(203, 195, 227), #6A1B9A);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+header:hover {
+  transform: scale(1.01);
+}
+header h1 {
+  font-size: 3em;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  animation: fadeIn 1s ease;
+}
+section h2 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #4A148C;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+}
+section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff6f61;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== Moves Grid ===== */
+.moves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.move-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.move-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.move-card img {
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  display: none;
+  transition: 0.3s ease;
+  border-radius: 20px 20px 0 0;
+}
+.move-card .content {
+  padding: 20px;
+}
+.move-card h3 {
+  color: #6A1B9A;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+.move-card p {
+  font-size: 0.95em;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ===== Buttons ===== */
+.move-card button, .buy-btn {
+  background: linear-gradient(45deg, #ff6f61, #ff8a65);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(255,111,97,0.3);
+}
+.move-card button:hover, .buy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,111,97,0.4);
+  background: linear-gradient(45deg, #ff8a65, #ff7043);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(to right, #6A1B9A, #8E24AA);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  font-size: 0.9em;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+  section h2 {
+    font-size: 1.8em;
+  }
+}
+/* ===== Gadgets Two-Column Layout ===== */
+#gadgets-section {
+  background: linear-gradient(120deg, #fef9c3, #ffe0b2);
+  padding: 50px 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.gadget-card {
+  flex: 1 1 400px; /* responsive two-column layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff8e1;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.gadget-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  background: #fff0c1; /* subtle color change on hover */
+}
+
+.gadget-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #eee;
+  border-radius: 20px 20px 0 0;
+}
+
+.gadget-card .content {
+  padding: 20px;
+  text-align: center;
+}
+
+.gadget-card h3 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.gadget-card p {
+  font-size: 0.95em;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.gadget-card .buy-btn {
+  background: linear-gradient(45deg, #ff7043, #ff8a65);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255,112,67,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gadget-card .buy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,112,67,0.4);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>KidSafe</h1>
+    <p>Learn fun and safe self-defense techniques for children</p>
+  </header>
+
+  <!-- Introduction Section -->
+  <section id="intro">
+    <h2>Why Learn Self-Defense?</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Self-defense teaches children how to stay safe, build confidence, and react calmly in difficult situations. Learning simple techniques can make a huge difference in everyday safety.
+    </p>
+  </section>
+
+  <!-- Self-Defense Moves -->
+  <section id="moves-section">
+    <h2>Basic Self-Defense Moves</h2>
+    <div class="moves">
+
+      <!-- Move 1 -->
+      <div class="move-card">
+        <div class="content">
+          <h3>1. Know Vulnerable Places</h3>
+          <p>Learn where an attacker can be most vulnerable so you can protect yourself effectively.</p>
+         <img src="strter1.webp" alt="Vulnerable Places" class="move-img" id="img1">
+          <button onclick="toggleImage('img1')">Show Image</button>
+        </div>
+      </div>
+
+      <!-- Move 2 -->
+      <div class="move-card">
+        <div class="content">
+          <h3>2. Front Grab Escape</h3>
+          <p>Practice techniques to free yourself if someone grabs your arm from the front.</p>
+          <img src="fronthand.webp" alt="Front Grab Escape" class="move-img" id="img2">
+          <button onclick="toggleImage('img2')">Show Image</button>
+        </div>
+      </div>
+
+      <!-- Move 3 -->
+      <div class="move-card">
+        <div class="content">
+          <h3>3. Low Kick</h3>
+          <p>A simple kick to the attacker’s legs can give you space to escape safely.</p>
+          <img src="frontgrab.webp" alt="Low Kick" class="move-img" id="img3">
+          <button onclick="toggleImage('img3')">Show Image</button>
+        </div>
+      </div>
+
+      <div class="move-card">
+        <div class="content">
+          <h3>Groin kick</h3>
+          <p>A groin kick is a swift strike aimed at an opponent’s lower abdomen for self-defense.</p>
+          <img src="groinkick.webp" alt="bad news" class="move-img" id="img4">
+          <button onclick="toggleImage('img4')">Show Image</button>
+
+      </div>
+      </div>
+      <div class="move-card">
+        <div class="content">
+          <h3> Escape with hands trapped</h3>
+          <p>If your attacker comes from behind and traps your arms (this is similar to a bear hug, but you won’t be able to move as freely)</p>
+          <img src="handtaped.webp" alt="bad news" class="move-img" id="img5">
+          <button onclick="toggleImage('img5')">Show Image</button>
+
+      </div>
+      </div>
+    
+    <div class="move-card">
+        <div class="content">
+          <h3> Escape from side headlock</h3>
+          <p>When the attacker locks their arm around your head from the side, your first instinct should be to avoid getting choked.</p>
+          <img src="Escape-from-side-headlock.webp" alt="bad news" class="move-img" id="img6">
+          <button onclick="toggleImage('img6')">Show Image</button>
+
+      </div>
+      </div>
+        <div class="move-card">
+        <div class="content">
+          <h3> Elbow strike</h3>
+          <p>If your attacker is in close range and you’re unable to get enough momentum to throw a strong punch or kick, use your elbows.</p>
+          <img src="Elbow-strike2.webp" alt="bad news" class="move-img" id="img7">
+          <button onclick="toggleImage('img7')">Show Image</button>
+
+      </div>
+      </div>
+       <!-- Pepper-spray card (replace your existing card) -->
+<!-- Defensive Gadgets Section -->
+<section id="gadgets-section">
+  <h2>Self-Defense Gadgets</h2>
+  <div class="moves">
+
+    <!-- Pepper Spray -->
+    <div class="move-card">
+      <div class="content">
+        <h3>Pepper Spray</h3>
+        <p>Good weapon to escape from an attacker quickly and safely.</p>
+        <img src="peperpray.gif" alt="Pepper Spray" class="move-img" id="img8">
+        <button onclick="toggleImage('img8')">Show Image</button>
+
+        <div style="margin-top:12px;">
+          <button class="buy-btn" onclick="openBuy('https://amzn.in/d/6UwzxMm')">Buy Now</button>
+        </div>
+
+        <p style="font-size:0.85em; color:#666; margin-top:8px;">
+          Note: Check local laws and age restrictions before buying or carrying defensive sprays.
+        </p>
+      </div>
+    </div>
+
+    <!-- Electric Taser -->
+    <div class="move-card">
+      <div class="content">
+        <h3>Electric Taser</h3>
+        <p>Delivers a high-voltage current to temporarily incapacitate an attacker.</p>
+        <img src="electric2.webp" alt="Electric Taser" class="move-img" id="img9">
+        <button onclick="toggleImage('img9')">Show Image</button>
+
+        <div style="margin-top:12px;">
+          <button class="buy-btn" onclick="openBuy('https://safetygadgets.in/products/e-wave-v-2-0-stun-gun')">Buy Now</button>
+        </div>
+
+        <p style="font-size:0.85em; color:#666; margin-top:8px;">
+          Note: Check local laws and age restrictions before buying or carrying tasers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sharp-Pointed Keychains -->
+    <div class="move-card">
+      <div class="content">
+        <h3>Sharp-Pointed Keychains</h3>
+        <p>Small, portable self-defense tool you can carry on your keys.</p>
+        <img src="sharp.webp" alt="Sharp Keychain" class="move-img" id="img10">
+        <button onclick="toggleImage('img10')">Show Image</button>
+
+        <div style="margin-top:12px;">
+          <button class="buy-btn" onclick="openBuy('https://safetygadgets.in/products/e-wave-v-2-0-stun-gun')">Buy Now</button>
+        </div>
+
+        <p style="font-size:0.85em; color:#666; margin-top:8px;">
+          Note: Check local laws and age restrictions before buying or carrying defensive keychains.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Add these CSS rules (add inside your <style> block) -->
+<style>
+  .buy-btn {
+    margin-top: 10px;
+    background-color: #2b7cff;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(43,124,255,0.25);
+    transition: transform .14s ease, box-shadow .14s ease;
+  }
+  .buy-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(43,124,255,0.22); }
+  .buy-btn:active { transform: translateY(-1px); }
+</style>
+
+<!-- Add/update these JS functions (inside your existing <script> block) -->
+<script>
+  function openBuy(url) {
+    // open in a new tab with safe noopener
+    const newWindow = window.open('', 'noopener,noreferrer');
+    if (newWindow) {
+      // set location after opening (prevents some popup blockers)
+      newWindow.location = url;
+    } else {
+      // fallback if popup blocked — open in same tab
+      window.location.href = url;
+    }
+  }
+
+  // your existing toggleImage function stays the same:
+  function toggleImage(id) {
+    const img = document.getElementById(id);
+    img.style.display = (img.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 KidSafe. All rights reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleImage(id) {
+      const img = document.getElementById(id);
+      if(img.style.display === "block") {
+        img.style.display = "none";
+      } else {
+        img.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Defense Move</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .move-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .move-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .move-card .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .move-card h3 {
+      color: #ff6f61;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .move-card p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .move-card button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .move-card button:hover {
+      background-color: #e55b4e;
+    }
+
+    .move-card img {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="move-card">
+    <div class="content">
+      <h3>4. Trust Your Instincts</h3>
+      <p>If someone gives you a bad vibe or makes you uncomfortable, stay away and seek help.</p>
+      <img src="hil1.webp" alt="Trust Your Instincts" id="instinctImg">
+      <button onclick="toggleImage('instinctImg')">Show Image</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleImage(id) {
+      const img = document.getElementById(id);
+      if(img.style.display === "block") {
+        img.style.display = "none";
+      } else {
+        img.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
