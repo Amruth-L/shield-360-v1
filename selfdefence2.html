@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KidSafe: Learn Self-Defense</title>
   <style>
+    /* Animation for KidSafe heading */
+header h1 {
+  font-size: 3em;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  animation: slideSide 2s ease-in-out infinite alternate; /* infinite sideways slide */
+  display: inline-block;
+}
+
+/* Keyframes for sliding sideways */
+@keyframes slideSide {
+  0% {
+    transform: translateX(0);
+    color: #ffffff;
+  }
+  50% {
+    transform: translateX(20px); /* moves to the right */
+    color: #b3e5fc; /* changes color while sliding */
+  }
+  100% {
+    transform: translateX(0);
+    color: #ffffff;
+  }
+}
+
     /* ===== Reset & Base ===== */
 * {
   margin: 0;
@@ -59,7 +85,7 @@ section h2 {
   font-size: 2.2em;
   margin-bottom: 25px;
   text-align: center;
-  color: #4A148C;
+  color:lightblue;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   position: relative;
 }
@@ -179,7 +205,7 @@ footer {
   flex: 1 1 400px; /* responsive two-column layout */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   background: #fff8e1;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -261,7 +287,7 @@ footer {
       <!-- Move 1 -->
       <div class="move-card">
         <div class="content">
-          <h3>1. Know Vulnerable Places</h3>
+          <h3> Know Vulnerable Places</h3>
           <p>Learn where an attacker can be most vulnerable so you can protect yourself effectively.</p>
          <img src="strter1.webp" alt="Vulnerable Places" class="move-img" id="img1">
           <button onclick="toggleImage('img1')">Show Image</button>
@@ -271,7 +297,7 @@ footer {
       <!-- Move 2 -->
       <div class="move-card">
         <div class="content">
-          <h3>2. Front Grab Escape</h3>
+          <h3> Front Grab Escape</h3>
           <p>Practice techniques to free yourself if someone grabs your arm from the front.</p>
           <img src="fronthand.webp" alt="Front Grab Escape" class="move-img" id="img2">
           <button onclick="toggleImage('img2')">Show Image</button>
@@ -281,7 +307,7 @@ footer {
       <!-- Move 3 -->
       <div class="move-card">
         <div class="content">
-          <h3>3. Low Kick</h3>
+          <h3>Low Kick</h3>
           <p>A simple kick to the attacker’s legs can give you space to escape safely.</p>
           <img src="frontgrab.webp" alt="Low Kick" class="move-img" id="img3">
           <button onclick="toggleImage('img3')">Show Image</button>
