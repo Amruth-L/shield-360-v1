@@ -4,33 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KidSafe: Learn Self-Defense</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    /* Animation for KidSafe heading */
-header h1 {
-  font-size: 3em;
-  margin-bottom: 8px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  animation: slideSide 2s ease-in-out infinite alternate; /* infinite sideways slide */
-  display: inline-block;
-}
-
-/* Keyframes for sliding sideways */
-@keyframes slideSide {
-  0% {
-    transform: translateX(0);
-    color: #ffffff;
-  }
-  50% {
-    transform: translateX(20px); /* moves to the right */
-    color: #b3e5fc; /* changes color while sliding */
-  }
-  100% {
-    transform: translateX(0);
-    color: #ffffff;
-  }
-}
-
     /* ===== Reset & Base ===== */
 * {
   margin: 0;
@@ -38,8 +15,8 @@ header h1 {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(120deg, #e0c3fc, #8ec5fc);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
   color: #333;
   line-height: 1.6;
   transition: background 0.4s ease-in-out;
@@ -51,7 +28,7 @@ a {
 
 /* ===== Header ===== */
 header {
-  background: linear-gradient(to right,RGB(203, 195, 227), #6A1B9A);
+  background: linear-gradient(90deg, #0D47A1, #1976D2);
   color: white;
   text-align: center;
   padding: 50px 20px;
@@ -64,6 +41,7 @@ header:hover {
   transform: scale(1.01);
 }
 header h1 {
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: 3em;
   margin-bottom: 8px;
   letter-spacing: 2px;
@@ -85,7 +63,7 @@ section h2 {
   font-size: 2.2em;
   margin-bottom: 25px;
   text-align: center;
-  color:lightblue;
+  color: #0D47A1;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   position: relative;
 }
@@ -94,7 +72,7 @@ section h2::after {
   display: block;
   width: 80px;
   height: 4px;
-  background: #ff6f61;
+  background: #4FC3F7;
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -132,7 +110,7 @@ section h2::after {
   padding: 20px;
 }
 .move-card h3 {
-  color: #6A1B9A;
+  color: #1565C0;
   margin-bottom: 10px;
   font-size: 1.3em;
 }
@@ -144,7 +122,7 @@ section h2::after {
 
 /* ===== Buttons ===== */
 .move-card button, .buy-btn {
-  background: linear-gradient(45deg, #ff6f61, #ff8a65);
+  background: linear-gradient(45deg, #1E88E5, #42A5F5);
   color: white;
   border: none;
   padding: 10px 16px;
@@ -153,17 +131,17 @@ section h2::after {
   margin: 5px;
   font-weight: 600;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(255,111,97,0.3);
+  box-shadow: 0 4px 10px rgba(25,118,210,0.3);
 }
 .move-card button:hover, .buy-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,111,97,0.4);
-  background: linear-gradient(45deg, #ff8a65, #ff7043);
+  box-shadow: 0 8px 20px rgba(25,118,210,0.4);
+  background: linear-gradient(45deg, #42A5F5, #64B5F6);
 }
 
 /* ===== Footer ===== */
 footer {
-  background: linear-gradient(to right, #6A1B9A, #8E24AA);
+  background: linear-gradient(to right, #1565C0, #1E88E5);
   color: white;
   text-align: center;
   padding: 20px;
@@ -191,7 +169,7 @@ footer {
 }
 /* ===== Gadgets Two-Column Layout ===== */
 #gadgets-section {
-  background: linear-gradient(120deg, #fef9c3, #ffe0b2);
+  background: linear-gradient(120deg, #E1F5FE, #E3F2FD);
   padding: 50px 20px;
   border-radius: 30px;
   display: flex;
@@ -205,7 +183,7 @@ footer {
   flex: 1 1 400px; /* responsive two-column layout */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   background: #fff8e1;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -217,7 +195,7 @@ footer {
 .gadget-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  background: #fff0c1; /* subtle color change on hover */
+  background: #E3F2FD; /* subtle color change on hover */
 }
 
 .gadget-card img {
@@ -233,7 +211,7 @@ footer {
 }
 
 .gadget-card h3 {
-  color: #ff6f61;
+  color: #1976D2;
   margin-bottom: 10px;
   font-size: 1.4em;
 }
@@ -245,22 +223,26 @@ footer {
 }
 
 .gadget-card .buy-btn {
-  background: linear-gradient(45deg, #ff7043, #ff8a65);
+  background: linear-gradient(45deg, #1E88E5, #42A5F5);
   color: white;
   border: none;
   padding: 10px 16px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(255,112,67,0.3);
+  box-shadow: 0 4px 10px rgba(25,118,210,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gadget-card .buy-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,112,67,0.4);
+  box-shadow: 0 8px 20px rgba(25,118,210,0.4);
 }
 
+  /* Motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
   </style>
 </head>
 <body>
@@ -287,7 +269,7 @@ footer {
       <!-- Move 1 -->
       <div class="move-card">
         <div class="content">
-          <h3> Know Vulnerable Places</h3>
+          <h3>1. Know Vulnerable Places</h3>
           <p>Learn where an attacker can be most vulnerable so you can protect yourself effectively.</p>
          <img src="strter1.webp" alt="Vulnerable Places" class="move-img" id="img1">
           <button onclick="toggleImage('img1')">Show Image</button>
@@ -297,7 +279,7 @@ footer {
       <!-- Move 2 -->
       <div class="move-card">
         <div class="content">
-          <h3> Front Grab Escape</h3>
+          <h3>2. Front Grab Escape</h3>
           <p>Practice techniques to free yourself if someone grabs your arm from the front.</p>
           <img src="fronthand.webp" alt="Front Grab Escape" class="move-img" id="img2">
           <button onclick="toggleImage('img2')">Show Image</button>
@@ -307,7 +289,7 @@ footer {
       <!-- Move 3 -->
       <div class="move-card">
         <div class="content">
-          <h3>Low Kick</h3>
+          <h3>3. Low Kick</h3>
           <p>A simple kick to the attacker’s legs can give you space to escape safely.</p>
           <img src="frontgrab.webp" alt="Low Kick" class="move-img" id="img3">
           <button onclick="toggleImage('img3')">Show Image</button>
@@ -351,9 +333,10 @@ footer {
 
       </div>
       </div>
-       <!-- Pepper-spray card (replace your existing card) -->
-<!-- Defensive Gadgets Section -->
-<section id="gadgets-section">
+    </div>
+  </section>
+  <!-- Defensive Gadgets Section -->
+  <section id="gadgets-section">
   <h2>Self-Defense Gadgets</h2>
   <div class="moves">
 
@@ -414,48 +397,6 @@ footer {
   </div>
 </section>
 
-<!-- Add these CSS rules (add inside your <style> block) -->
-<style>
-  .buy-btn {
-    margin-top: 10px;
-    background-color: #2b7cff;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    box-shadow: 0 3px 8px rgba(43,124,255,0.25);
-    transition: transform .14s ease, box-shadow .14s ease;
-  }
-  .buy-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(43,124,255,0.22); }
-  .buy-btn:active { transform: translateY(-1px); }
-</style>
-
-<!-- Add/update these JS functions (inside your existing <script> block) -->
-<script>
-  function openBuy(url) {
-    // open in a new tab with safe noopener
-    const newWindow = window.open('', 'noopener,noreferrer');
-    if (newWindow) {
-      // set location after opening (prevents some popup blockers)
-      newWindow.location = url;
-    } else {
-      // fallback if popup blocked — open in same tab
-      window.location.href = url;
-    }
-  }
-
-  // your existing toggleImage function stays the same:
-  function toggleImage(id) {
-    const img = document.getElementById(id);
-    img.style.display = (img.style.display === "block") ? "none" : "block";
-  }
-</script>
-
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
     &copy; 2025 KidSafe. All rights reserved.
@@ -463,15 +404,18 @@ footer {
 
   <!-- JS -->
   <script>
-    function toggleImage(id) {
-      const img = document.getElementById(id);
-      if(img.style.display === "block") {
-        img.style.display = "none";
+    function openBuy(url) {
+      const newWindow = window.open('', 'noopener,noreferrer');
+      if (newWindow) {
+        newWindow.location = url;
       } else {
-        img.style.display = "block";
+        window.location.href = url;
       }
     }
+    function toggleImage(id) {
+      const img = document.getElementById(id);
+      img.style.display = (img.style.display === "block") ? "none" : "block";
+    }
   </script>
-
 </body>
 </html>
